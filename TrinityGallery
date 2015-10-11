@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>TrinityGalery</title>
+    <style>
+        .wrapper {
+            width: 900px;
+            height: 480px;
+            margin: 0;
+        }
+
+        .target {
+            position: absolute;
+            margin: -484px 0px;
+            display: block;
+        }
+
+        .target_left {
+            position: absolute;
+            margin: -484px 0px;
+            padding-left: 300px;
+            display: block;            
+        }
+
+        .target_left_more {
+            position: absolute;
+            margin: -484px 0px;
+            padding-left: 300px;
+            display: block;            
+        }
+
+        .image {
+            width: 300px;
+            height: 480px;
+        }
+
+        .left_right {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body style="border:3px solid">
+    <div onkeydown="" class="wrapper">
+        <script>
+            var imageArray = [
+        "https://pp.vk.me/c622628/v622628009/44b8a/88w2VTJQFAg.jpg",
+        "https://pp.vk.me/c622628/v622628009/44b92/KJSDkWZ84qo.jpg",
+        "https://pp.vk.me/c622628/v622628009/44b9a/JiDubZqblHE.jpg",
+        "https://pp.vk.me/c622628/v622628009/44ba2/GO_I-N0rIZ4.jpg"
+        //    "~/slide1.jpg",
+        //    "~/slide2.jpg",
+        //    "~/slide3.jpg",
+        //    "~slide4.jpg"
+            ];
+
+            document.write('<img id="image1" class="image" src="' + imageArray[0] + '">');
+            document.write('<img id="image2" class="image" src="' + imageArray[2] + '">');
+            document.write('<img id="image3" class="image" src="' + imageArray[3] + '">');
+        </script>
+        <div id="target" class="target">
+            <img src="http://2.firepic.org/2/images/2015-10/11/q29z6c3ewyob.png" />
+        </div>
+        <center class="left_right">
+            <img onclick="
+                el = document.getElementsByClassName('target');
+                if(el!=null)
+                    el.className = 'target_left';
+                else
+                    el = document.getElementsByClassName('target_left');
+                if(el!=null)
+                    el.className = 'target_left_more';
+                    "                    
+            src="http://6.firepic.org/6/images/2015-10/11/7fbhmzq29gcg.png" />
+            <img onclick="
+    func_right()
+                    "                
+                  src="http://6.firepic.org/6/images/2015-10/11/kfhzc1wancrt.png" />
+            <script>
+                var func_left=function(){};
+                var func_right = function () {
+                    alert('asda');
+                    el = document.getElementById('target');
+                    if (el.className == 'target')
+                        el.className = 'target_left';
+                    else {
+                        el = document.getElementById('target');
+                        if (el.className == 'target_left')
+                            el.className = 'target_left_more';
+                    }
+                       
+                };
+            </script>
+        </center>
+    </div>
+
+</body>
+</html>
