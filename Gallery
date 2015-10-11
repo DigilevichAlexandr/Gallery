@@ -81,10 +81,12 @@
         //Выводим картинки
     document.write('<img id="images" src="' + imageArray[0] + '">');
         </script>
-        <div id="left" onclick="image(0)" class="left_right"><img src="http://sergey-oganesyan.ru/wp-content/uploads/2014/01/left.png"></div>
+        <div id="left" onclick="image(0)" class="left_right">
+        <img src="http://6.firepic.org/6/images/2015-10/11/7fbhmzq29gcg.png"></div>
 
         <!-- Стрелочка вправо -->
-        <div id="right" onclick="image(1)" class="left_right" style="margin-left: 534px; position: absolute; display: none;"><img src="http://sergey-oganesyan.ru/wp-content/uploads/2014/01/right.png"></div>
+        <div id="right" onclick="image(1)" class="left_right" style="margin-left: 534px; position: absolute; display: none;">
+        <img src="http://6.firepic.org/6/images/2015-10/11/kfhzc1wancrt.png"></div>
 
         </div>
 
