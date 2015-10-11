@@ -17,17 +17,17 @@
             display: block;
         }
 
-        .target_left {
+        .target_center {
             position: absolute;
             margin: -484px 0px;
             padding-left: 300px;
             display: block;            
         }
 
-        .target_left_more {
+        .target_right {
             position: absolute;
             margin: -484px 0px;
-            padding-left: 300px;
+            padding-left: 600px;
             display: block;            
         }
 
@@ -56,40 +56,54 @@
             ];
 
             document.write('<img id="image1" class="image" src="' + imageArray[0] + '">');
-            document.write('<img id="image2" class="image" src="' + imageArray[2] + '">');
-            document.write('<img id="image3" class="image" src="' + imageArray[3] + '">');
+            document.write('<img id="image2" class="image" src="' + imageArray[1] + '">');
+            document.write('<img id="image3" class="image" src="' + imageArray[2] + '">');
         </script>
         <div id="target" class="target">
             <img src="http://2.firepic.org/2/images/2015-10/11/q29z6c3ewyob.png" />
         </div>
         <center class="left_right">
-            <img onclick="
-                el = document.getElementsByClassName('target');
-                if(el!=null)
-                    el.className = 'target_left';
-                else
-                    el = document.getElementsByClassName('target_left');
-                if(el!=null)
-                    el.className = 'target_left_more';
-                    "                    
-            src="http://6.firepic.org/6/images/2015-10/11/7fbhmzq29gcg.png" />
-            <img onclick="
-    func_right()
-                    "                
-                  src="http://6.firepic.org/6/images/2015-10/11/kfhzc1wancrt.png" />
+            <img onclick="func_left()" src="http://6.firepic.org/6/images/2015-10/11/7fbhmzq29gcg.png" />
+            <img onclick="func_right()" src="http://6.firepic.org/6/images/2015-10/11/kfhzc1wancrt.png" />
             <script>
-                var func_left=function(){};
+                var func_left = function () {
+                    el = document.getElementById('target');
+                    if (el.className == 'target_right')
+                        el.className = 'target_center';
+                    else 
+                        if (el.className == 'target_center')
+                            el.className = 'target';
+                        else {
+                            var im1 = document.getElementById('image1');
+                            var src1 = im1.getAttribute('src');
+                            src1 = imageArray[1];
+                            var im2 = document.getElementById('image2');
+                            var src2 = im2.getAttribute('src');
+                            im2 = imageArray[2];
+                            var im3 = document.getElementById('image3');
+                            var src3 = im3.getAttribute('src');
+                            im1 = imageArray[3];
+                        }
+                     };
                 var func_right = function () {
-                    alert('asda');
+                    //alert('asda');
                     el = document.getElementById('target');
                     if (el.className == 'target')
-                        el.className = 'target_left';
-                    else {
-                        el = document.getElementById('target');
-                        if (el.className == 'target_left')
-                            el.className = 'target_left_more';
-                    }
-                       
+                        el.className = 'target_center';
+                    else 
+                        if (el.className == 'target_center')
+                            el.className = 'target_right';
+                        else{
+                            var im1 = document.getElementById('image1');
+                            var src1 = im1.getAttribute('src');
+                            src1 = imageArray[1];
+                            var im2 = document.getElementById('image2');
+                            var src2 = im2.getAttribute('src');
+                            im2=imageArray[2];
+                            var im3 = document.getElementById('image3');
+                            var src3 = im3.getAttribute('src');
+                            im1=imageArray[3];                
+                        }                       
                 };
             </script>
         </center>
