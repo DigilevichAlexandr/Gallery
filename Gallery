@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Galery</title>
+    <style type="text/css">
+        .wrapper {
+            width: 640px;
+            height: 480px;
+            margin: 10px auto;
+        }
+
+        .left_right {
+            position: absolute;
+            display: none;
+            cursor: pointer;
+            margin: -288px 0 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <div onMouseOver="btn_show()" onMouseOut="btn_noshow()" class="wrapper">
+        <script type="text/javascript">
+    var imageArray = [
+
+        "https://pp.vk.me/c622628/v622628009/44b8a/88w2VTJQFAg.jpg",
+        "https://pp.vk.me/c622628/v622628009/44b92/KJSDkWZ84qo.jpg",
+        "https://pp.vk.me/c622628/v622628009/44b9a/JiDubZqblHE.jpg",
+        "https://pp.vk.me/c622628/v622628009/44ba2/GO_I-N0rIZ4.jpg"
+        //    "~/slide1.jpg",
+        //    "~/slide2.jpg",
+        //    "~/slide3.jpg",
+        //    "~/slide4.jpg"
+    ];
+
+    window.number = '0';
+
+    var imageCount = imageArray.length;
+
+    function image(num){
+
+            //Если выбрана следующая картинка
+        if(num == 1){
+
+                //Если это последняя картинка, то не увеличиваем счетчик number
+            if(number < imageCount - 1){
+
+                number++;
+
+                document.getElementById('images').src = imageArray[number];
+                document.getElementById('num_img').innerHTML= number + 1 + '/' + imageCount;
+            }
+        }
+        else{  //Если выбрана предыдущая картинка
+
+                    //Если это первая картинка, то не уменьшаем счетчик number
+            if(number > 0){
+
+                number--;
+                document.getElementById('images').src = imageArray[number];
+                document.getElementById('num_img').innerHTML= number + 1 + '/' + imageCount;
+            }
+        }
+    }
+
+            //Функция для показа стрелочек
+    function btn_show(){
+
+        if(number != 0) document.getElementById('left').style.display='block';
+        if(number != imageCount - 1) document.getElementById('right').style.display='block';
+    }
+
+            //Функция, которая прекращает показ стрелочек
+    function btn_noshow(){
+
+        document.getElementById('left').style.display='none';
+        document.getElementById('right').style.display='none';
+    }
+
+        //Выводим картинки
+    document.write('<img id="images" src="' + imageArray[0] + '">');
+        </script>
+        <div id="left" onclick="image(0)" class="left_right"><img src="http://sergey-oganesyan.ru/wp-content/uploads/2014/01/left.png"></div>
+
+        <!-- Стрелочка вправо -->
+        <div id="right" onclick="image(1)" class="left_right" style="margin-left: 534px; position: absolute; display: none;"><img src="http://sergey-oganesyan.ru/wp-content/uploads/2014/01/right.png"></div>
+
+        </div>
+
+    <center><p style="font-size: 18px;color: #333;font-weight: bold;" id="num_img"></p></center>
+
+    <center><span class="myButton" onclick="image(0)">Back</span> <span class="myButton" onclick="image(1)">Next</span></center>
+    
+   </body>
+</html>
