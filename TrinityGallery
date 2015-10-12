@@ -1,3 +1,7 @@
+
+@{
+    Layout = null;
+}
 <!DOCTYPE html>
 
 <html>
@@ -15,20 +19,23 @@
             position: absolute;
             margin: -484px 0px;
             display: block;
+            transition:all 0.3s ease;
         }
 
         .target_center {
             position: absolute;
             margin: -484px 0px;
             padding-left: 300px;
-            display: block;            
+            display: block;
+            transition:all 0.3s ease;
         }
 
         .target_right {
             position: absolute;
             margin: -484px 0px;
             padding-left: 600px;
-            display: block;            
+            display: block;
+            transition:all 0.3s ease;
         }
 
         .image {
@@ -49,10 +56,6 @@
         "https://pp.vk.me/c622628/v622628009/44b92/KJSDkWZ84qo.jpg",
         "https://pp.vk.me/c622628/v622628009/44b9a/JiDubZqblHE.jpg",
         "https://pp.vk.me/c622628/v622628009/44ba2/GO_I-N0rIZ4.jpg"
-        //    "~/slide1.jpg",
-        //    "~/slide2.jpg",
-        //    "~/slide3.jpg",
-        //    "~slide4.jpg"
             ];
 
             document.write('<img id="image1" class="image" src="' + imageArray[0] + '"/>');
@@ -71,22 +74,14 @@
                     el = document.getElementById('target');
                     if (el.className == 'target_right')
                         el.className = 'target_center';
-                    else 
+                    else
                         if (el.className == 'target_center')
                             el.className = 'target';
                         else {
                             //var im1 =
                             document.getElementById('image1').src = imageArray[0];
                             document.getElementById('image2').src = imageArray[1];
-                            document.getElementById('image3').src = imageArray[2];
-                            //var src1 = im1.getAttribute('src');
-                            //src1 = imageArray[1];
-                            //var im2 = document.getElementById('image2');
-                            //var src2 = im2.getAttribute('src');
-                            //im2 = imageArray[2];
-                            //var im3 = document.getElementById('image3');
-                            //var src3 = im3.getAttribute('src');
-                            //im1 = imageArray[3];
+                            document.getElementById('image3').src = imageArray[2];                            
                         }
                      };
                 var func_right = function () {
@@ -94,22 +89,13 @@
                     el = document.getElementById('target');
                     if (el.className == 'target')
                         el.className = 'target_center';
-                    else 
+                    else
                         if (el.className == 'target_center')
                             el.className = 'target_right';
                         else {
                             document.getElementById('image1').src = imageArray[1];
                             document.getElementById('image2').src = imageArray[2];
-                            document.getElementById('image3').src = imageArray[3];
-                            //var im1 = document.getElementById('image1');
-                            //var src1 = im1.getAttribute('src');
-                            //src1 = imageArray[1];
-                            //var im2 = document.getElementById('image2');
-                            //var src2 = im2.getAttribute('src');
-                            //im2=imageArray[2];
-                            //var im3 = document.getElementById('image3');
-                            //var src3 = im3.getAttribute('src');
-                            //im1=imageArray[3];                
+                            document.getElementById('image3').src = imageArray[3];                            
                         }
                 };
             </script>
